@@ -90,6 +90,15 @@ module.exports = function(grunt) {
 			},
 			files: [ 'Gruntfile.js', 'js/reveal.js' ]
 		},
+		  prettify: {
+		  	options: {
+		  		config: '.prettifyrc'
+		  	},
+		  	one: {
+		  		src: 'index.html',
+		  		dest: 'index.html'
+		  	}
+		  },
 
 		connect: {
 			server: {
@@ -146,6 +155,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
 	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-zip' );
+	grunt.loadNpmTasks('grunt-prettify');
 
 	// Default task
 	grunt.registerTask( 'default', [ 'css', 'js' ] );
@@ -166,7 +176,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'package', [ 'default', 'zip' ] );
 
 	// Serve presentation locally
-	grunt.registerTask( 'serve', [ 'connect', 'watch' ] );
+	grunt.registerTask( 'serve', [ 'prettify','connect', 'watch' ] );
 
 	// Run tests
 	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
