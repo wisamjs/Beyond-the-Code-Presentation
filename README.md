@@ -1,1 +1,2 @@
 # Beyond the Code
+A presentation about common negative thought patterns developers can face, and a plea to be more honest and open with yourself and one another. Presented at [HackerYou](http://hackeryou.com/) on May 25th 2015. Presentation was created using [RevealJs](https://github.com/hakimel/reveal.js).
